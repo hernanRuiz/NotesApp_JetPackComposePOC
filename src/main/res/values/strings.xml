@@ -9,4 +9,8 @@
     <string name="date_pattern">"EEEE, d 'de' MMMM"</string>
     <string name="mark_as_important">Marcar como Importante</string>
     <string name="note_save_success">Nota guardada exitosamente</string>
+    <string name="note_update_success">Nota actualizada exitosamente</string>
+    <string name="edit_note">Editar nota</string>
+    <string name="delete_note">Eliminar nota</string>
+    <string name="mark_as_important_tag">Important!</string>
 </resources>
