@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">NotesApp</string>
+
+    <string name="app_name_sp">Notas</string>
+    <string name="note_title">Título</string>
+    <string name="note_description">Descripción</string>
+    <string name="save_note">Guardar nota</string>
+    <string name="language">es</string>
+    <string name="date_pattern">"EEEE, d 'de' MMMM"</string>
+    <string name="mark_as_important">Marcar como Importante</string>
+    <string name="note_save_success">Nota guardada exitosamente</string>
 </resources>
