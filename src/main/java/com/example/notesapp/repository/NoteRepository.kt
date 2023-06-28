@@ -11,6 +11,8 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class NoteRepository @Inject constructor(private val noteDatabaseDao: NoteDatabaseDao){
+
+    //Interacciones con el Dao, segundo eslabón en el camino hacia la base de datos
     suspend fun addNote(note: Note) = noteDatabaseDao.insert(note = note)
     suspend fun updateNote(note: Note) = noteDatabaseDao.update(note = note)
     suspend fun deleteNote(note: Note) = noteDatabaseDao.deleteNote(note = note)

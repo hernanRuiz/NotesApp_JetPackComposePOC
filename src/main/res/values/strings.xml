@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">NotesApp</string>
-
     <string name="app_name_sp">Notas</string>
     <string name="note_title">Título</string>
     <string name="note_description">Descripción</string>
@@ -12,5 +11,6 @@
     <string name="note_update_success">Nota actualizada exitosamente</string>
     <string name="edit_note">Editar nota</string>
     <string name="delete_note">Eliminar nota</string>
+    <string name="deleted_note">Nota eliminada</string>
     <string name="mark_as_important_tag">Important!</string>
 </resources>

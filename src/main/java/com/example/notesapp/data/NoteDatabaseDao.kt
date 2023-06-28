@@ -12,7 +12,7 @@ import com.example.notesapp.model.Note
 import kotlinx.coroutines.flow.Flow
 
 
-@Dao //Contecta mi entidad Note con la base de datos
+@Dao //Interacciones con la base de datos
 interface NoteDatabaseDao {
 
     @Query("SELECT * from notes_tbl")

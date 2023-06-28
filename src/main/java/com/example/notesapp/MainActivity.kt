@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
             NotesAppTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
                     val noteViewModel: NoteViewModel by viewModels()
-                    NotesApp(noteViewModel)
+                    NotesApp(noteViewModel) //la app en si
                 }
             }
         }
@@ -38,7 +38,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun NotesApp(notesViewModel: NoteViewModel){
+    //trae las notas que se persisten en la base de datos
     val noteList = notesViewModel.noteList.collectAsState().value
+
+    //Setea la visual y métodos asociados
     NoteScreen(notes = noteList,
         onRemoveNote = { notesViewModel.removeNote(it) },
         onAddNote = { notesViewModel.addNote(it) },

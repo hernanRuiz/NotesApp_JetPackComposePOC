@@ -20,13 +20,15 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class NoteViewModel @Inject constructor(private val noteRepository: NoteRepository): ViewModel() {
+class NoteViewModel @Inject constructor(
+    private val noteRepository: NoteRepository): ViewModel() {
 
     private val _noteList = MutableStateFlow<List<Note>>(emptyList())
     private val emptyDbTag = "Sin registros"
     private val emptyDbMessage = "Base de datos vacía"
     val noteList = _noteList.asStateFlow()
 
+    //Interacciones con el repositorio, primer eslabón en el camino hacia la base de datos
     init {
         viewModelScope.launch(Dispatchers.IO) {
             noteRepository.getAllNotes().distinctUntilChanged().collect { listOfNotes ->
@@ -39,8 +41,6 @@ class NoteViewModel @Inject constructor(private val noteRepository: NoteReposito
     }
 
     fun addNote(note: Note) = viewModelScope.launch { noteRepository.addNote(note) }
-
     fun removeNote(note: Note) = viewModelScope.launch { noteRepository.deleteNote(note) }
-
     fun updateNote(note: Note) = viewModelScope.launch { noteRepository.updateNote(note) }
 }

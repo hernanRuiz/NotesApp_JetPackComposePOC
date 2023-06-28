@@ -24,12 +24,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 
 import com.example.notesapp.R
 
-
-@OptIn(ExperimentalComposeUiApi::class)
+//Elementos visuales personalizados para NoteScreen
+@OptIn(ExperimentalComposeUiApi::class) //Compose está en desarrollo, no es versión final, y hay cosas que exigen este tag
 @Composable
 fun NoteInputText(
     modifier: Modifier = Modifier,
@@ -45,11 +46,16 @@ fun NoteInputText(
         colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.Transparent),
         maxLines = maxLine,
         label = {Text(text = label)},
-        keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
+
+        keyboardOptions = KeyboardOptions.Default.copy(
+            imeAction = ImeAction.Done,
+            keyboardType = KeyboardType.Password),
+
         keyboardActions = KeyboardActions(onDone = {
             onImeAction()
             keyboardController?.hide()
         }),
+
         modifier = modifier)
 }
 

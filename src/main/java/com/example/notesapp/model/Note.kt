@@ -7,7 +7,7 @@ import java.time.Instant
 import java.util.UUID
 import java.util.Date
 
-
+//Entidad que representa cada objeto a guardar en la base de datos
 @Entity(tableName = "notes_tbl")
 data class Note(
 
